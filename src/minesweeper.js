@@ -24,7 +24,7 @@ class Game {
   }
 
   playMove(rowIndex, columnIndex) {
-    this._board.flipTile(rowIndex, columnIndex)
+    this._board.flipTile(rowIndex, columnIndex);
     if (this._board[rowIndex][columnIndex] === 'B') {
       console.log('the game is over!');
       this._board.print;
@@ -103,9 +103,9 @@ class Board {
 
   static generatePlayerBoard(numberOfRows, numberOfColumns){
     let board = [];
-    for (numberOfRowsIndex = 0; numberOfRowsIndex < numberOfRows; numberOfRowsIndex++) {
+    for (let numberOfRowsIndex = 0; numberOfRowsIndex < numberOfRows; numberOfRowsIndex++) {
       let row = [];
-      for (numberOfColumnsIndex = 0; numberOfColumnsIndex < numberOfColumns; numberOfColumnsIndex++) {
+      for (let numberOfColumnsIndex = 0; numberOfColumnsIndex < numberOfColumns; numberOfColumnsIndex++) {
         row.push(' ');
       }
       board.push(row);
@@ -115,9 +115,9 @@ class Board {
 
   static generateBombBoard(numberOfRows, numberOfColumns, numberOfBombs) {
     let board = [];
-    for (numberOfRowsIndex = 0; numberOfRowsIndex < numberOfRows; numberOfRowsIndex++) {
+    for (let numberOfRowsIndex = 0; numberOfRowsIndex < numberOfRows; numberOfRowsIndex++) {
       let row = [];
-      for (numberOfColumnsIndex = 0; numberOfColumnsIndex < numberOfColumns; numberOfColumnsIndex++) {
+      for (let numberOfColumnsIndex = 0; numberOfColumnsIndex < numberOfColumns; numberOfColumnsIndex++) {
         row.push(null);
       }
       board.push(row);
