@@ -25,11 +25,11 @@ class Game {
 
   playMove(rowIndex, columnIndex) {
     this._board.flipTile(rowIndex, columnIndex);
-    if (this._board[rowIndex][columnIndex] === 'B') {
+    if (this._board._bombBoard[rowIndex][columnIndex] === 'B') {
       console.log('the game is over!');
-      this._board.print;
+      this._board._playerBoard.print;
     }
-    else if (this._board.hasSafeTiles) {
+    else if (this._board.hasSafeTiles()) {
       console.log('you have won! good job!')
     }
     else {
@@ -98,7 +98,7 @@ class Board {
   }
 
   print(board) {
-    console.log(board.map(row => row.join(' | ')).join('\n'));
+    console.log(this._playerBoard.map(row => row.join(' | ')).join('\n'));
   }
 
   static generatePlayerBoard(numberOfRows, numberOfColumns){
@@ -139,6 +139,9 @@ class Board {
 
 
 const g = new Game(3, 3, 3);
+console.log(g._board._bombBoard[0][0]);
+console.log(g._board._numberOfTiles===g._board._numberOfBombs);
+console.log(g._board.hasSafeTiles());
 g.playMove(0,0);
 
 
